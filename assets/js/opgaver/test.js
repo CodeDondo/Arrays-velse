@@ -29,6 +29,30 @@ listItemRemove.addEventListener('click', (event) => {
     console.table(myData)
 })
 
+function showList(listIndex){
+
+    let myListData = myData[listIndex]
+
+    let myListElement = document.getElementById('listElement')
+
+    myListElement.innerHTML = ''
+
+    console.log(myListData);
+
+    myListElement.innerHTML = `<h2>${myListData.name}</h2><ul>`
+
+    myListData.listItems.forEach(listItem,index => {
+        
+        console.log(listItem,index);
+        myListElement.innerHTML += `<li>${listItem.name}</li>`
+        
+        
+
+    });
+    
+myListElement.innerHTML += `</ul>`
+
+}
 
 // Modtager et navn string og skaber et nyt liste dataobjekt og gemmer et i myData
 function makeList(myName){
